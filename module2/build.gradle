@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+apply plugin: 'idea'
+
+idea {
+	module {
+        inheritOutputDirs = false
+		outputDir compileJava.destinationDir
+	}
+}
+
+group = 'ru.test'
+sourceCompatibility = javaVersion
+targetCompatibility = javaVersion
+
+dependencies {
+    //Lombok
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+
+    //Mapping support
+    implementation "org.mapstruct:mapstruct-jdk8:${mapStructVersion}"
+    annotationProcessor "org.mapstruct:mapstruct-processor:${mapStructVersion}"
+
+}
+

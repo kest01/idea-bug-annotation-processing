@@ -1,0 +1,31 @@
+
+
+allprojects {
+
+    buildscript {
+        repositories {
+            mavenCentral()
+        }
+    }
+    repositories {
+        mavenCentral()
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+
+    tasks.withType(GroovyCompile) {
+        options.encoding = "UTF-8"
+    }
+}
+
+ext {
+    javaVersion = JavaVersion.VERSION_11
+    mapStructVersion = '1.2.0.Final'
+    lombokVersion = '1.18.4'
+}
+
+group = 'ru.test'
+
+
